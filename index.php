@@ -1,7 +1,7 @@
 <?php
 class CarFactory
 {
-    public function make(string $class): CarFactoryInterface /// assinatura
+    public static function make(string $class): CarFactoryInterface /// assinatura
     {
         $className = ucfirst($class);
 
@@ -63,7 +63,6 @@ class corcel implements CarFactoryInterface
     }
 }
 
-$carFactory = new CarFactory;
-$carInstance = $carFactory->make('chevette');
+$carInstance = CarFactory::make('chevette');
 
 var_dump($carInstance->drive());
